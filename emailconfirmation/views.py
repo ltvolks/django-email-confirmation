@@ -5,7 +5,7 @@ from emailconfirmation.models import EmailConfirmation
 
 
 def confirm_email(request, confirmation_key):
-    
+    """Confirm an email address using a confirmation_key"""
     confirmation_key = confirmation_key.lower()
     email_address = EmailConfirmation.objects.confirm_email(confirmation_key)
     
