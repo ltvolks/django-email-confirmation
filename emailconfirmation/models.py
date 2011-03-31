@@ -157,7 +157,7 @@ class EmailConfirmationManager(models.Manager):
         confirmation_key = sha_constructor(salt + email_address.email).hexdigest()
         confirmation = self.create(
                             email_address=email_address,
-                            sent=datetime.now(),
+                            sent=datetime.datetime.now(),
                             confirmation_key=confirmation_key)
 
         return confirmation
